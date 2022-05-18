@@ -63,7 +63,3 @@ int main() {
   cout << "Maximum revenue is $" << r.maxRevenue;
   return 0;
 }
-
-// this is a somewhat flawed problem because increasing rent by an arbitrarily small amount does not always result in a decrease in occupied apartments, much as it does in real life. As such, we, the programmer, need to account for the 'resolution' of this function not being super high. In simpler terms, this problem is best modelled by a step function. We are able to increase the rent by just one cent less than would make another tenant move out (in the example, raising rent by $39.99 would not cause a decrease in occupancy).
-
-// Likewise, the function describing revenue is not a perfect parabola. It is not technically differentiable, but if we assume that it is, then de-smooth its output, we get a reasonable approximation of what the maximum revenue is. That explains why graphing this function and using a C++ program to compute the maximum with the derivative I pre-calculated are slightly different. The tolerance is dependent entirely upon what percentage of the increase in rent which would cause one unit to go vacant is made up by the smallest available division of currency (the cent, $0.01).
